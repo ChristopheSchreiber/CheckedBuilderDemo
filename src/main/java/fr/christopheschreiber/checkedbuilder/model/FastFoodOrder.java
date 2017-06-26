@@ -1,5 +1,7 @@
 package fr.christopheschreiber.checkedbuilder.model;
 
+import fr.christopheschreiber.checkedbuilder.model.builder.*;
+
 /**
  * This data class is the model of a fast food order
  * There is no getter in order to keep it simple for the example
@@ -25,14 +27,62 @@ public class FastFoodOrder {
         return "FastFoodOrder{" +
                 "orderType=" + orderType +
                 ", mealType=" + mealType +
-                ", breadType=" + breadType +
+                (mealType == MealType.SANDWICH ? ", breadType=" + breadType : "") +
                 ", recipe=" + recipe +
-                ", sauce=" + sauce +
+                (sauce != null ? ", sauce=" + sauce : "") +
                 '}';
     }
 
-    public static FastFoodOrderBuilder newOrder() {
+    public static EmptyOrder newOrder() {
         return new FastFoodOrderBuilder();
     }
 
+    public static class FastFoodOrderBuilder implements EmptyOrder, OrderWithMealType,
+            SandwichOrder, EmptyMealOrder, OrderFinalizer {
+
+        OrderType orderType;
+        MealType mealType;
+        BreadType breadType;
+        Recipe recipe;
+        Sauce sauce;
+
+        public FastFoodOrder buildOrder() {
+            return new FastFoodOrder(this);
+        }
+
+        public OrderWithMealType eatOnSite() {
+            this.orderType = OrderType.ON_SITE;
+            return this;
+        }
+
+        public OrderWithMealType takeAway() {
+            this.orderType = OrderType.TAKE_AWAY;
+            return this;
+        }
+
+        public SandwichOrder orderSandwich() {
+            this.mealType = MealType.SANDWICH;
+            return this;
+        }
+
+        public EmptyMealOrder orderSalad() {
+            this.mealType = MealType.SALAD;
+            return this;
+        }
+
+        public EmptyMealOrder chooseBread(BreadType breadType) {
+            this.breadType = breadType;
+            return this;
+        }
+
+        public OrderFinalizer withBaseRecipe(Recipe recipe) {
+            this.recipe = recipe;
+            return this;
+        }
+
+        public OrderFinalizer withSauce(Sauce sauce) {
+            this.sauce = sauce;
+            return this;
+        }
+    }
 }
