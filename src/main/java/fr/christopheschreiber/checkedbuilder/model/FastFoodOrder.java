@@ -37,7 +37,7 @@ public class FastFoodOrder {
         return new FastFoodOrderBuilder();
     }
 
-    public static class FastFoodOrderBuilder implements EmptyOrder, OrderWithMealType,
+    public static class FastFoodOrderBuilder implements EmptyOrder, OrderWithOrderType,
             SandwichOrder, EmptyMealOrder, OrderFinalizer {
 
         OrderType orderType;
@@ -50,12 +50,12 @@ public class FastFoodOrder {
             return new FastFoodOrder(this);
         }
 
-        public OrderWithMealType eatOnSite() {
+        public OrderWithOrderType eatOnSite() {
             this.orderType = OrderType.ON_SITE;
             return this;
         }
 
-        public OrderWithMealType takeAway() {
+        public OrderWithOrderType takeAway() {
             this.orderType = OrderType.TAKE_AWAY;
             return this;
         }
