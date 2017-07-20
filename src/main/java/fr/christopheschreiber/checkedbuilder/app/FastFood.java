@@ -16,6 +16,6 @@ public class FastFood {
                 .eatOnSite()
                 .withSauce(Sauce.KETCHUP)
                 .buildOrder();
-        System.out.printf(order.toString());
+        System.out.println(order.toString());
     }
 }
