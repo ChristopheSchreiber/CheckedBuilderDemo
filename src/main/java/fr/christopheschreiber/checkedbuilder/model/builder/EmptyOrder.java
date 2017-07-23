@@ -5,6 +5,6 @@ package fr.christopheschreiber.checkedbuilder.model.builder;
  */
 public interface EmptyOrder {
 
-    public OrderWithMealType eatOnSite();
-    public OrderWithMealType takeAway();
+    public OrderWithOrderType eatOnSite();
+    public OrderWithOrderType takeAway();
 }
