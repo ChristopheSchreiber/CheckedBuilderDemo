@@ -6,26 +6,20 @@ package fr.christopheschreiber.checkedbuilder.model;
  */
 public class FastFoodOrder {
 
-    private OrderType orderType;
-    private MealType mealType;
-    private BreadType breadType;
-    private Recipe recipe;
-    private Sauce sauce;
+    protected OrderType orderType;
+    protected Recipe recipe;
+    protected Sauce sauce;
 
     FastFoodOrder(FastFoodOrderBuilder builder) {
         this.orderType = builder.orderType;
-        this.mealType = builder.mealType;
-        this.breadType = builder.breadType;
         this.recipe = builder.recipe;
         this.sauce = builder.sauce;
     }
 
     @Override
     public String toString() {
-        return "FastFoodOrder{" +
+        return "FastFoodOrder {" +
                 "orderType=" + orderType +
-                ", mealType=" + mealType +
-                ", breadType=" + breadType +
                 ", recipe=" + recipe +
                 ", sauce=" + sauce +
                 '}';

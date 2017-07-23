@@ -11,8 +11,16 @@ public class FastFoodOrderBuilder {
     Recipe recipe;
     Sauce sauce;
 
-    public FastFoodOrder buildOrder() {
-        return new FastFoodOrder(this);
+    public FastFoodOrder buildOrder()
+    {
+        switch (mealType) {
+            case SANDWICH:
+                return new Sandwich(this);
+            case SALAD:
+                return new Salad(this);
+            default:
+                throw new IllegalArgumentException("Unknown meal type" + mealType);
+        }
     }
 
     public FastFoodOrderBuilder eatOnSite() {
