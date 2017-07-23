@@ -1,4 +1,4 @@
-package fr.christopheschreiber.checkedbuilder.model;
+package fr.christopheschreiber.checkedbuilder.model.builder;
 
 /**
  * Created by Christophe on 22/06/2017.

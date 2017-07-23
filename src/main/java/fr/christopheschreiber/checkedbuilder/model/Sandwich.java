@@ -15,7 +15,7 @@ public class Sandwich extends FastFoodOrder {
                 "orderType=" + orderType +
                 ", bread=" + breadType +
                 ", recipe=" + recipe +
-                ", sauce=" + sauce +
+                ", " + (sauce != null ? "sauce=" + sauce : "no sauce") +
                 '}';
     }
 }

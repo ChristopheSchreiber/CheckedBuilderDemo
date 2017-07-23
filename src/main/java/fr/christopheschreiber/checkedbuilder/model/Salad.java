@@ -11,7 +11,7 @@ public class Salad extends FastFoodOrder {
         return "Salad {" +
                 "orderType=" + orderType +
                 ", recipe=" + recipe +
-                ", sauce=" + sauce +
+                ", " + (sauce != null ? "sauce=" + sauce : "no sauce") +
                 '}';
     }
 }

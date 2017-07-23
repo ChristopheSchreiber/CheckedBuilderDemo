@@ -1,5 +1,7 @@
 package fr.christopheschreiber.checkedbuilder.model;
 
+import fr.christopheschreiber.checkedbuilder.model.builder.MealType;
+
 /**
  * Created by Christophe on 26/06/2017.
  */

@@ -21,7 +21,7 @@ public class FastFoodOrder {
         return "FastFoodOrder {" +
                 "orderType=" + orderType +
                 ", recipe=" + recipe +
-                ", sauce=" + sauce +
+                ", " + (sauce != null ? "sauce=" + sauce : "no sauce") +
                 '}';
     }
 
