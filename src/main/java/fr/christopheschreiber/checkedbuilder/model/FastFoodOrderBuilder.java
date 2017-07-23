@@ -1,11 +1,12 @@
 package fr.christopheschreiber.checkedbuilder.model;
 
-import fr.christopheschreiber.checkedbuilder.model.builder.MealType;
+import fr.christopheschreiber.checkedbuilder.model.builder.*;
 
 /**
  * Created by Christophe on 26/06/2017.
  */
-public class FastFoodOrderBuilder {
+public class FastFoodOrderBuilder implements EmptyOrder, OrderWithOrderType, SandwichOrder, EmptyMealOrder,
+        OrderFinalizer{
 
     OrderType orderType;
     MealType mealType;
@@ -24,36 +25,37 @@ public class FastFoodOrderBuilder {
         }
     }
 
-    public FastFoodOrderBuilder eatOnSite() {
+    public OrderWithOrderType eatOnSite() {
         this.orderType = OrderType.ON_SITE;
         return this;
     }
 
-    public FastFoodOrderBuilder takeAway() {
+    public OrderWithOrderType takeAway() {
         this.orderType = OrderType.TAKE_AWAY;
         return this;
     }
-    public FastFoodOrderBuilder orderSandwich() {
+
+    public SandwichOrder orderSandwich() {
         this.mealType = MealType.SANDWICH;
         return this;
     }
 
-    public FastFoodOrderBuilder orderSalad() {
+    public EmptyMealOrder orderSalad() {
         this.mealType = MealType.SALAD;
         return this;
     }
 
-    public FastFoodOrderBuilder chooseBread(BreadType breadType) {
+    public EmptyMealOrder chooseBread(BreadType breadType) {
         this.breadType = breadType;
         return this;
     }
 
-    public FastFoodOrderBuilder withBaseRecipe(Recipe recipe) {
+    public OrderFinalizer withBaseRecipe(Recipe recipe) {
         this.recipe = recipe;
         return this;
     }
 
-    public FastFoodOrderBuilder withSauce(Sauce sauce) {
+    public OrderFinalizer withSauce(Sauce sauce) {
         this.sauce = sauce;
         return this;
     }

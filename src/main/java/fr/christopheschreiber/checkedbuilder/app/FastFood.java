@@ -6,7 +6,7 @@ import fr.christopheschreiber.checkedbuilder.model.Recipe;
 import fr.christopheschreiber.checkedbuilder.model.Sauce;
 
 /**
- * This class is a quick main to show how the {@link fr.christopheschreiber.checkedbuilder.model.FastFoodOrder.FastFoodOrderBuilder} class is used
+ * This class is a quick main to show how the {@link fr.christopheschreiber.checkedbuilder.model.builder.FastFoodOrderBuilder} class is used
  */
 public class FastFood {
 
