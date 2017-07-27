@@ -1,5 +1,7 @@
 package fr.christopheschreiber.checkedbuilder.model;
 
+import fr.christopheschreiber.checkedbuilder.model.builder.EmptyOrder;
+
 /**
  * This data class is the model of a fast food order
  * There is no getter in order to keep it simple for the example
@@ -25,7 +27,7 @@ public class FastFoodOrder {
                 '}';
     }
 
-    public static FastFoodOrderBuilder newOrder() {
+    public static EmptyOrder newOrder() {
         return new FastFoodOrderBuilder();
     }
 
